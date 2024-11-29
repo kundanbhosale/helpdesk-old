@@ -12,14 +12,22 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "noUncheckedIndexedAccess": true,
     "plugins": [
       {
         "name": "next"
+      },
+      {
+        "name": "gql.tada/ts-plugin",
+        // "schema": "https://beta.pokeapi.co/graphql/v1beta",
+        "schema": "../realtime/schema.graphql",
+        "tadaOutputLocation": "./src/graphql/graphql-env.d.ts"
       }
     ],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "target": "ES2017"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
